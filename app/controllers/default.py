@@ -11,4 +11,8 @@ def index():
 
 @app.route("/cadastro_doenca")
 def cadastro_doenca():
-    return 'Olá doenca!'
+    return render_template('doenca_form.html'), 200
+
+@app.route("/cadastro_dado_epidemiologico")
+def cadastro_dado_epidemiologico():
+    return render_template('dadoepidemiologico_form.html'), 200

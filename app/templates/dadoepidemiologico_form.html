@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block title%}
+<title> Dado Epidemiologico | Dados Epidemiológicos </title>
+{% endblock title%} 
+{% block conteudo %}
+<div class="formulario_doenca">
+    <form action="">
+        <label for="id_data_coleta">Data da Coleta: </label>
+        <input type="text" name="data_coleta" id="id_data_coleta">
+        <label for="id_doenca_associada">Doença associada: </label>
+        <select name="doenca_associada" id="id_doenca_associada"></select>
+    </form>
+</div>
+{% endblock conteudo %}

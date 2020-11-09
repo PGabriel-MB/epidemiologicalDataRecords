@@ -1,0 +1,14 @@
+{% extends 'base.html' %} 
+{% block title%}
+<title> Formulário Doenças | Dados Epidemiológicos </title>
+{% endblock title%} 
+{% block conteudo %}
+<div class="formulario_doenca">
+    <form action="">
+        <label for="id_nome">Nome da Doença: </label>
+        <input type="text" name="nome" id="id_nome">
+        <label for="id_sintomas">Descreva os Sintomas: </label>
+        <textarea name="sintomas" id="id_sintomas" cols="10" rows="5"></textarea>
+    </form>
+</div>
+{% endblock conteudo %}
