@@ -16,10 +16,10 @@
         </div>
         <div>
             <div class="topnav">
-                <a class="active" href="#home">Home</a>
+                <a class="active" href="{{ url_for('index') }}">Home</a>
                 <a href="{{ url_for('cadastro_doenca') }}">Doença</a>
                 <a href="{{ url_for('cadastro_dado_epidemiologico') }}">Dado Epidemiológico</a>
-                <a href="#about">Listagem de Doenças</a>
+                <a href="{{ url_for('visualizar_doencas') }}">Listagem de Doenças</a>
             </div>
         </div>
     </header>

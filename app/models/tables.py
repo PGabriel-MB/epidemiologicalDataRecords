@@ -5,11 +5,12 @@ class Doenca(db.Model):
     __tablename__ = 'doenca'
 
     id = db.Column(db.Integer, primary_key=True)
-    nome = db.Column(db.String, unique=True)
+    nome = db.Column(db.String(80), unique=True)
     sintomas = db.Column(db.Text)
 
-    def __init__(self, nome):
+    def __init__(self, nome, sintomas):
         self.nome = nome
+        self.sintomas = sintomas
     
     def __repr__(self):
         return "<Doença %r>" % self.nome

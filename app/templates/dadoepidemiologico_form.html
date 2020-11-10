@@ -3,12 +3,23 @@
 <title> Dado Epidemiologico | Dados Epidemiológicos </title>
 {% endblock title%} 
 {% block conteudo %}
-<div class="formulario_doenca">
-    <form action="">
+<div class="formulario_epidemia">
+    <form action="" method="POST">
+        {{ form.csrf_token }}
         <label for="id_data_coleta">Data da Coleta: </label>
-        <input type="text" name="data_coleta" id="id_data_coleta">
+        <input type="date" name="data_coleta" id="id_data_coleta" style="width: 100%">
+        <br>
         <label for="id_doenca_associada">Doença associada: </label>
-        <select name="doenca_associada" id="id_doenca_associada"></select>
+        <select name="doenca_associada" id="id_doenca_associada">
+            {% if doencas|length > 0 %}
+                {% for doenca in doencas %}
+                <option value="{{ doenca.id }}">{{ doenca.nome }}</option>
+                {% endfor %}
+            {% else %}
+                <option> Não Existem doenças cadastradas ainda...</option>
+            {% endif %}
+        </select>
+        <button type="submit"> Enviar </button>
     </form>
 </div>
 {% endblock conteudo %}

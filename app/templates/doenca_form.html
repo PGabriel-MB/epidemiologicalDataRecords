@@ -4,11 +4,13 @@
 {% endblock title%} 
 {% block conteudo %}
 <div class="formulario_doenca">
-    <form action="">
+    <form action="" method="POST">
+        {{ form.csrf_token }}
         <label for="id_nome">Nome da Doença: </label>
-        <input type="text" name="nome" id="id_nome">
+        <input type="text" name="nome" id="id_nome" placeholder="Ex.: Sars-Cov">
         <label for="id_sintomas">Descreva os Sintomas: </label>
         <textarea name="sintomas" id="id_sintomas" cols="10" rows="5"></textarea>
+        <button type="submit"> Enviar </button>
     </form>
 </div>
 {% endblock conteudo %}

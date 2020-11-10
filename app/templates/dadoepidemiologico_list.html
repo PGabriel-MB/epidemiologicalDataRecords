@@ -1,16 +1,16 @@
-{% extends 'base.html' %} {% block conteudo %}
-<h2>Epidemias</h2>
-<div class="center">
-    <figure>
-        <img id="img_graphic" src="{{ url_for('static', filename='img/fake_graphic.svg') }}" alt="">
-    </figure>
-</div>
+{% extends 'base.html' %} 
+{% block title%}
+<title> Listagem de Epidemias | Dados Epidemiológicos </title>
+{% endblock title%} 
+
+{% block conteudo %}
+
 {% if epidemias|length > 0 %}
     <div>
         <ul class="center">
             {% for epid in epidemias%}
             <li>
-                <strong>Doença associada: </strong> {{ epid.doenca_associada.nome }}
+                <strong>Doença associada: </strong> {{ epid.doenca_associada }}
                 <br>
                 <p>{{ epid.data_coleta }}</p>
             </li>
