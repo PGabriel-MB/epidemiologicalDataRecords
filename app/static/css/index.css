@@ -68,3 +68,23 @@ textarea, select {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+.row {
+    display: flex;
+}
+
+.row div {
+    width: 100%;
+}
+
+.row div button {
+    float: right;
+}
+
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 28px;
+    border-radius: 10px;
+}

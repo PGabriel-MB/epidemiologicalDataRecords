@@ -1,28 +1,35 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
 {% block title%}
 <title> Listagem Doenças | Dados Epidemiológicos </title>
-{% endblock title%} 
+{% endblock title%}
 
 {% block conteudo %}
 
 {% if doencas|length > 0 %}
-    <div>
-        <ul class="center">
-            {% for doenca in doencas%}
-            <li>
-                <strong>{{ doenca.nome }}</strong> 
-                <br>
-                <p>{{doenca.sintomas}}</p>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+<div>
+    <ul class="center">
+        {% for doenca in doencas%}
+        <li>
+            <div class="row">
+                <div>
+                    <strong>{{ doenca.nome }}</strong>
+                    <br>
+                    <p>{{doenca.sintomas}}</p>
+                </div>
+                <div>
+                    <button class="btn"> ⊗ </button>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% else %}
 
-    <div>
-        <h2>Infelizmente não existem doenças cadastradas...</h2>
-    </div>
+<div>
+    <h2>Infelizmente não existem doenças cadastradas...</h2>
+</div>
 
 {% endif %}
 

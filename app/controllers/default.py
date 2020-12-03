@@ -13,11 +13,18 @@ def index():
     epidemias = DadoEpidemiologico.query.order_by(DadoEpidemiologico.id).all()
     return render_template('index.html', epidemias=epidemias), 200
 
-#@app.route('/visualizar_doencas/<id>')
-@app.route('/visualizar_doencas') #defaults={ id: None })
-def visualizar_doencas():
+
+@app.route('/visualizar_doencas')
+@app.route('/visualizar_doencas/<id>')
+def visualizar_doencas(id=None):
     doencas = Doenca.query.order_by(Doenca.id).all()
+
+    if id:
+        doencas = []
+        doencas.append(Doenca.query.get(id))
+    
     return render_template('doencas_list.html', doencas=doencas)
+
 
 @app.route("/cadastro_doenca", methods=["POST", "GET"])
 def cadastro_doenca():
@@ -30,6 +37,17 @@ def cadastro_doenca():
         return  redirect(url_for('visualizar_doencas'))
 
     return render_template('doenca_form.html', form=form)
+
+
+@app.route('/deletar_doenca/<id>')
+def deletar_doenca(id):
+    doenca = Doenca.query.get(id)
+    nome_doenca = doenca.nome
+    db.session.delete(doenca)
+    db.session.commit() 
+
+    return render_template('doenca_excluida.html', nome_doenca=nome_doenca)
+
 
 @app.route("/cadastro_dado_epidemiologico", methods=["POST", "GET"])
 def cadastro_dado_epidemiologico():
