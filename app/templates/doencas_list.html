@@ -17,7 +17,7 @@
                     <p>{{doenca.sintomas}}</p>
                 </div>
                 <div>
-                    <button class="btn"> ⊗ </button>
+                    <a href="{{ url_for('deletar_doenca', id=doenca.id ) }}" class="btn"> ⊗ </a>
                 </div>
             </div>
         </li>

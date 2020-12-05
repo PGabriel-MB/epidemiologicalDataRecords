@@ -77,7 +77,7 @@ textarea, select {
     width: 100%;
 }
 
-.row div button {
+.row div a {
     float: right;
 }
 
@@ -87,4 +87,6 @@ textarea, select {
     padding: 10px;
     font-size: 28px;
     border-radius: 10px;
+    border: none;
+    text-decoration: none;
 }

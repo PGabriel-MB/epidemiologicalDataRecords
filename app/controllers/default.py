@@ -39,7 +39,7 @@ def cadastro_doenca():
     return render_template('doenca_form.html', form=form)
 
 
-@app.route('/deletar_doenca/<id>')
+@app.route('/deletar_doenca/<id>', methods=["GET"])
 def deletar_doenca(id):
     doenca = Doenca.query.get(id)
     nome_doenca = doenca.nome
