@@ -20,7 +20,7 @@ class DadoEpidemiologico(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     data_coleta = db.Column(db.DateTime, nullable=False)
-    doenca_associada_id = db.Column(db.Integer, db.ForeignKey('doenca.id'))
+    doenca_associada_id = db.Column(db.Integer, db.ForeignKey('doenca.id'), nullable=True)
  
     doenca_associada = db.relationship('Doenca', foreign_keys=doenca_associada_id)
 
